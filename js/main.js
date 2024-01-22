@@ -7,7 +7,7 @@ let lives = 10;
 let speed = 60;
 let catImage, canImage;
 
-
+/*vytvoří třídu Cat, uloží její parametry, funkce pro pohyb pomocí kláves A a D, vykreslí obdélník pro objekt a obrázek pro grafiku*/
 class Cat {
     constructor(x=0, y=0) {
         this.x = x;
@@ -38,6 +38,8 @@ class Cat {
     }
 }
 
+/*vytvoří třídu Can, nastaví souřadnici y nad plátno, aby shora padaly už vykreslené objekty, náhodně nastaví souřadnici x, vytvoří funkci pro pohyb
+ a vykreslí kružnici pro objekt a obrázek pro grafiku*/
 class Can {
     constructor(angle) {
         this.y = -100;
@@ -73,17 +75,20 @@ class Can {
     }
 }
 
+/*přiřadí obrázky do proměných */
 function preload() {
     catImage = loadImage("img/cat2.png");
     canImage = loadImage("img/can.png");
 }
 
+/*vykreslí plátno, přiřadí třídu Cat do proměnné cat a vykreslí ji na plátno  */
 function setup() {
     canvas = createCanvas(500, 500);
-    cat = new Cat(0, height-50);
+    cat = new Cat(250, height-50);
     
 }
 
+/*vkresluje objekty can, posbírané objekty nebo objekty mimo plátno maže s pole, počítá body, odečítá životy, vypisuje skóre */
 function draw() {
     frame++;
     
@@ -123,11 +128,10 @@ function draw() {
     console.log(lives);
     console.log(speed);
     
-    
+    /*pokud dojdou životy, hra se ukončí */
     if(lives == 0) {
         background(0);
         noLoop();
-         /* Nastavení tmavě červeného pozadí s průhledností (200) */
             background(100, 0, 0, 200);
             textSize(50);
             fill(255, 0, 0, 200);
