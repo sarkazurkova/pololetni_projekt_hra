@@ -141,7 +141,7 @@ function draw() {
         
     }
     score.innerHTML = `<p>Skóre: ${points}</p>`;
-    score.innerHTML += `<p>Životy: ${lives}</p>`;
+    score.innerHTML += `<p>Tvoje životy: ${lives}</p>`;
 } 
 
 
